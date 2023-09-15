@@ -1,6 +1,8 @@
 const app = require("./src/app");
+const configMongose = require("./src/config/config.mongose");
 
-const port = process.env.PORT || 3000;
+
+const {port} = configMongose;
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
