@@ -10,7 +10,6 @@ var userSchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
       trim: true
     },
     email: {
@@ -25,7 +24,7 @@ var userSchema = new Schema(
     status: {
       type: String,
       enum: ['active', 'inactive'],
-      default: 'active'
+      default: 'inactive'
     },
     verify: {
       type: Boolean,
@@ -42,5 +41,4 @@ var userSchema = new Schema(
   }
 )
 
-//Export the model
 module.exports = model(DOCUMENT_NAME, userSchema)

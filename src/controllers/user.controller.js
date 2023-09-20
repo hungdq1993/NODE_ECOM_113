@@ -1,15 +1,12 @@
 'use strict'
 
+const UserService = require("../services/user.service")
+
 class UserController {
 
   register = async (req, res, next) =>  {
     try {
-      return res.status(200).json({
-        code: 'OK',
-        metaData: {
-          user: 'Hung'
-        }
-      })
+      return res.status(201).json(await UserService.register(req.body))
     } catch (error) {
       next(error)
     }
